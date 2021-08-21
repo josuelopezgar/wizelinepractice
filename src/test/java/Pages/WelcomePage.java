@@ -9,15 +9,14 @@ public class WelcomePage extends BaseSeleniumActions {
 
     By loginButton = By.xpath("//button[contains(text(),'Login')]");
 
-    public Boolean clickOnButton(WebDriver driver){
+    public WelcomePage clickOnButton(WebDriver driver){
         try {
             SingletonBaseDriverReports.setTestName("Pressing on login button");
             waitUntilElementIsClickable(driver, loginButton);
         }catch (Exception e){
             SingletonBaseDriverReports.setFailResult("The button was not pressed");
-            return false;
         }
         SingletonBaseDriverReports.setPassResult("The button was pressed");
-        return true;
+        return new WelcomePage();
     }
 }

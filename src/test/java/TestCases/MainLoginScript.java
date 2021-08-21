@@ -38,6 +38,7 @@ public class MainLoginScript {
     public void after() throws IOException {
         driver.close();
         driver.quit();
+        SingletonBaseDriverReports.getInstance().printFailedTestCasesDescriptions();
         SingletonBaseDriverReports.getInstance().endTest();
     }
 }

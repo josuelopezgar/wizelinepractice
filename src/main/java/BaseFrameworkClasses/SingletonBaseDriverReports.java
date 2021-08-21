@@ -21,7 +21,7 @@ public class SingletonBaseDriverReports {
     public static WebDriverWait wait;
 
     //private constructor for the singleton class
-    public SingletonBaseDriverReports(){
+    private SingletonBaseDriverReports(){
     }
 
     /**We declare the singleton instance if this is null*/
@@ -35,7 +35,7 @@ public class SingletonBaseDriverReports {
     //Methods to be used in the classes
     /**This method is to get the driver instance and use it during all the script flow*/
     public static WebDriver getDriver(){
-        WebDriver driver; driver= new ChromeDriver();
+        WebDriver driver = new ChromeDriver();
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+("chromedriver"));
         return driver;
     }

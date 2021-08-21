@@ -12,9 +12,14 @@ public class LoginPage extends BaseSeleniumActions {
     By password = By.xpath("//input[@placeholder='Password']");
     By button = By.xpath("//button[contains(text(),'Login')]");
 
-    public void loginPage(WebDriver driver){
-        sendKeys(driver,user,getEnvironment.getUser());
-        sendKeys(driver,password,getEnvironment.getPassword());
-        waitUntilElementIsClickable(driver,button);
+    public LoginPage loginPage(WebDriver driver){
+        try {
+            sendKeys(driver, user, getEnvironment.getUser());
+            sendKeys(driver, password, getEnvironment.getPassword());
+            waitUntilElementIsClickable(driver, button);
+        }catch (Exception e){
+            System.out.println("Exception: "+e);
+        }
+        return new LoginPage();
     }
 }
