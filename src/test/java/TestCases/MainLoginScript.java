@@ -31,7 +31,8 @@ public class MainLoginScript {
     public void test(){
         welcomePage.clickOnButton(driver);
         loginPage.loginPage(driver);
-        Assert.assertTrue(myNotesPage.validation(driver),"The my notes is visible");
+        Boolean myNotesHeaderTextIsEqual =myNotesPage.validation(driver);
+        Assert.assertTrue(myNotesHeaderTextIsEqual,"The my notes is visible");
     }
 
     @AfterTest
