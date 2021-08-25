@@ -24,14 +24,14 @@ public class BaseSeleniumActions {
         driver.manage().window().maximize();
     }
 
-    public WebElement findElement(WebDriver driver, By locator){
+    public WebElement findElementReturnElement(WebDriver driver, By locator){
         SingletonBaseDriverReports.getInstance().getWait(driver).until(ExpectedConditions.presenceOfElementLocated(locator));
         WebElement element = driver.findElement(locator);
         return element;
     }
 
     public void sendKeys(WebDriver driver, By locator, String textTosend){
-        findElement(driver,locator).sendKeys(textTosend);
+        findElementReturnElement(driver,locator).sendKeys(textTosend);
     }
 
     public void simpleClick(WebDriver driver, By locator){
